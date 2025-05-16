@@ -31,4 +31,4 @@ Call API
 
 1. Callback luôn được gọi sau khi component Mounted
 2. Cleanup function luôn được gọi trước khi component Unmounted
-3. Cleanup function luôn được gọi trước khi callback được gọi
+3. Cleanup function luôn được gọi trước khi callback được gọi (Trừ lần mounted)
