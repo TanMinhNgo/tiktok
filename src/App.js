@@ -1,34 +1,23 @@
 import {useState} from 'react';
 
 function App() {
-  const [job, setJob] = useState('');
-  const [jobs, setJobs] = useState(() => {
-    const storageJobs = JSON.parse(localStorage.getItem('jobs'));
-    return storageJobs ?? [];
-  })
+  const [count, setCount] = useState(0);
 
-  const handleSubmit = () => {
-    setJobs(prev => {
-      const newJobs = [...prev, job];
-      const jsonJobs = JSON.stringify(newJobs);
-      localStorage.setItem('jobs', jsonJobs);
-      return newJobs;
-    })
-    setJob('');
-  }
+  const handleClick = () => {
+    if (count < 3)
+      setCount(prevState => prevState + 1);
+    else
+      setCount(0);
+  };
+
+  
 
   return (
     <div className="App" style={{ padding: '20px'}}>
-      <input value={job}
-        onChange={e => setJob(e.target.value)}
-      />
-      <button onClick={handleSubmit}>Add</button>
-
-      <ul>
-        {jobs.map((job, index) => (
-          <li key={index}>{job}</li>
-        ))}
-      </ul>
+      <h1>{count}</h1>
+      <button onClick={handleClick} style={{ padding: '10px 20px', fontSize: '16px' }}>
+        Click me
+      </button>    
     </div>
   );
 }
