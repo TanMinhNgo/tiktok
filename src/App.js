@@ -1,24 +1,37 @@
-import {useState} from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { publicRoutes } from '~/routes'
+import { DefaultLayout } from '~/components/Layout';
+import { Fragment } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  const handleClick = () => {
-    if (count < 3)
-      setCount(prevState => prevState + 1);
-    else
-      setCount(0);
-  };
-
-  
-
   return (
-    <div className="App" style={{ padding: '20px'}}>
-      <h1>{count}</h1>
-      <button onClick={handleClick} style={{ padding: '10px 20px', fontSize: '16px' }}>
-        Click me
-      </button>    
-    </div>
+    <Router>
+      <div className='App'>
+        <Routes>
+          {publicRoutes.map((route, index) => {
+            let Layout = DefaultLayout
+            const Page = route.component
+
+            if (route.layout) {
+              Layout = route.layout
+            } else if (route.layout === null) {
+              Layout = Fragment
+            }
+            return (
+              <Route
+                key={index}
+                path={route.path}
+                element={
+                  <Layout>
+                    <Page />
+                  </Layout>
+                }
+              />
+            );
+          })}
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
