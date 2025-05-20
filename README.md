@@ -63,7 +63,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## ✍️ Author
 
-Your Name - [@yourgithub](https://github.com/yourgithub)
+TanMinhNgo - [@tan.m.n](https://github.com/TanNgoMinh)
 
 ## 🤝 Contributing
 
