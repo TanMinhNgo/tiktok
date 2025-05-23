@@ -9,6 +9,7 @@ import { HomeIcon,
          LiveIcon, 
          LiveActiveIcon } 
 from '~/components/Icons';
+import SuggestedAccounts from '~/components/SuggestedAccounts';
 
 const cx = classNames.bind(styles);
 
@@ -19,6 +20,9 @@ function SideBar() {
             <MenuItem title="Following" to={config.routes.following} icon={<UserGroupIcon />} activeIcon={<UserGroupActiveIcon />} />
             <MenuItem title="Live" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
         </Menu>
+
+        <SuggestedAccounts label="Suggested accounts"/>
+        <SuggestedAccounts label="Following accounts" />
     </aside>;
 }
 
