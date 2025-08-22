@@ -21,7 +21,7 @@
     "prop-types": "^15.8.1",
     "react": "^19.1.0",
     "react-app-rewired": "^2.2.1",
-    "react-dom": "^19.1.0",
+    "react-dom": "^19.1.1",
     "react-fontawesome": "^1.7.1",
     "react-router-dom": "^6.30.0",
     "react-scripts": "^5.0.1",
