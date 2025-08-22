@@ -19,7 +19,7 @@
     "customize-cra": "^1.0.0",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.8.1",
-    "react": "^19.1.0",
+    "react": "^19.1.1",
     "react-app-rewired": "^2.2.1",
     "react-dom": "^19.1.0",
     "react-fontawesome": "^1.7.1",
